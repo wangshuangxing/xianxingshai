@@ -1,0 +1,23 @@
+
+
+
+
+int prime[N] , check[N] , sum[N] , cnt ;
+
+inline void init ( int n )
+{
+    int i , j ;
+   sum[1]=1;
+    for ( i=2 ; i<=n+1 ; i++ )
+    {
+       if(check[i]==0) prime[++cnt]=i,sum[i]=（agg某个操作得到要的值）;
+        for ( j=1 ; j<=cnt && prime[j]*i<=n+1 ; j++ )
+        {
+            check[prime[j]*i]=1;/*标记下一次就不在重算*/
+            sum[prime[j]*i]=1ll*sum[i]*sum[prime[j]]%P;//在sum[i]的基础上将他的说有倍数都计算
+            if ( i%prime[j]==0 ) break;//出口的条件/*   当p1==prime[j] 的时候，//筛除就终止了(从最小质数开始所以本句话成立），   */
+            /*这里比如：当i=4时，prime[1]=2;已经把所有的2的倍数标了，如果在标的话就重复了*/
+            */
+        }
+    }
+}
